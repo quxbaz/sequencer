@@ -1,0 +1,19 @@
+{
+  "name": "sequencer",
+  "version": "0.0.0",
+  "description": "A music sequencer to be run with an audio and/or visual adapter.",
+  "main": "entry.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quxbaz/sequencer.git"
+  },
+  "author": "quxbaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quxbaz/sequencer/issues"
+  },
+  "homepage": "https://github.com/quxbaz/sequencer#readme"
+}
