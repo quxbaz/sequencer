@@ -5,7 +5,6 @@
 
   let sequencer = new Sequencer();
   sequencer.play();
-
 */
 
 import Channel from 'lib/channel';
@@ -63,7 +62,7 @@ export default class Sequencer {
     this.state.currentBeat = (this.state.currentBeat + 1) % 16;
   }
 
-  addChannel(state) {
+  addChannel(state={}) {
     this.state.channels.push(
       new Channel(state, {
         onPlay: blipState => this.publish('play-blip', blipState)
