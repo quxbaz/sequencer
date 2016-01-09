@@ -38,7 +38,7 @@ var config = {
 };
 
 if (process.env.mode === 'dist') {
-  config.entry = './index.js';
+  config.entry = resolve(__dirname, 'index.js');
   config.devtool = undefined;
   config.output.path = './dist/';
   config.output.filename = 'sequencer.js';
