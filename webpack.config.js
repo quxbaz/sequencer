@@ -2,7 +2,7 @@ require('es6-promise').polyfill();
 var path = require('path');
 var resolve = path.resolve;
 
-module.exports = {
+var config = {
 
   cache: true,
   devtool: 'eval-source-map',
@@ -36,3 +36,12 @@ module.exports = {
   }
 
 };
+
+if (process.env.mode === 'dist') {
+  config.entry = './index.js';
+  config.devtool = undefined;
+  config.output.path = './dist/';
+  config.output.filename = 'sequencer.js';
+}
+
+module.exports = config;
