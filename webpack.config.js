@@ -39,7 +39,7 @@ var config = {
 
 if (process.env.mode === 'dist') {
   config.entry = resolve(__dirname, 'index.js');
-  config.devtool = undefined;
+  config.devtool = 'inline-source-map';
   config.output.path = './dist/';
   config.output.filename = 'sequencer.js';
 }
