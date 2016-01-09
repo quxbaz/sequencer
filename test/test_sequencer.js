@@ -1,4 +1,4 @@
-import Sequencer from 'sequencer';
+import Sequencer from 'lib/sequencer';
 
 describe("Sequencer", function() {
 

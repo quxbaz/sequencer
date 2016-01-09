@@ -1,7 +1,7 @@
 {
   "name": "sequencer",
   "description": "A music sequencer to be run with an audio and/or visual adapter.",
-  "main": "sequencer.js",
+  "main": "index.js",
   "authors": [
     "quxbaz"
   ],
