@@ -27,20 +27,16 @@ var config = {
   },
 
   resolve: {
-    root: resolve('./'),
-    extensions: ['', '.js'],
-    alias: {
-      'timer'      : resolve('bower_components/timer.js/timer.js'),
-      'dispatcher' : resolve('bower_components/dispatcher/dispatcher.js')
-    }
+    root: resolve(__dirname),
+    extensions: ['', '.js']
   }
 
 };
 
-if (process.env.mode === 'dist') {
+if (process.env.mode === 'build') {
   config.entry = resolve(__dirname, 'index.js');
   config.devtool = 'inline-source-map';
-  config.output.path = './dist/';
+  config.output.path = './build/';
   config.output.filename = 'sequencer.js';
 }
 
