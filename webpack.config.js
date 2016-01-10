@@ -28,6 +28,10 @@ var config = {
 
   resolve: {
     root: resolve(__dirname),
+    alias: {
+      'timer'      : resolve(__dirname, 'bower_components/timer.js/timer.js'),
+      'dispatcher' : resolve(__dirname, 'bower_components/dispatcher/dispatcher.js')
+    },
     extensions: ['', '.js']
   }
 
