@@ -35,10 +35,10 @@ describe("Sequencer", () => {
     sequencer.state.currentBeat.should.eql(beat + 2);
   });
 
-  it("ticks for sixteen beats and returns the beat to 0.", () => {
+  it("ticks for sixteen beats and ends on the last beat.", () => {
     for (let i=0; i < 16; i++)
       sequencer.tick();
-    sequencer.state.currentBeat.should.eql(0);
+    sequencer.state.currentBeat.should.eql(15);
   });
 
   it("adds a channel.", () => {
