@@ -1,6 +1,6 @@
 import Sequencer from 'lib/sequencer';
 
-describe("Sequencer", function() {
+describe("Sequencer", () => {
 
   let sequencer;
 
