@@ -39,7 +39,8 @@ var config = {
 
 if (process.env.mode === 'build') {
   config.entry = resolve(__dirname, 'index.js');
-  config.devtool = 'inline-source-map';
+  // config.devtool = 'inline-source-map';
+  config.devtool = undefined;
   config.output.path = './build/';
   config.output.filename = 'sequencer.js';
 }
