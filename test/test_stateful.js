@@ -26,7 +26,7 @@ describe('Stateful mixin', function() {
 
   it("triggers a callback on change state.", () => {
     let i = 0;
-    foo.onChangeState((newState) => {
+    foo.onStateChange((newState) => {
       i++;
     });
     foo.setState({a: 1});
@@ -37,7 +37,7 @@ describe('Stateful mixin', function() {
 
   it("does not trigger a callback on calling setState() with the same state.", function() {
     let i = 0;
-    foo.onChangeState((newState) => {
+    foo.onStateChange((newState) => {
       i++;
     });
     foo.setState({a: 1});
