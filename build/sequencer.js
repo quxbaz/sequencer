@@ -49,7 +49,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.exports = undefined;
+	exports.AudioService = exports.Blip = exports.Channel = exports.Sequencer = undefined;
 
 	var _sequencer = __webpack_require__(1);
 
@@ -69,9 +69,11 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var _exports = { Sequencer: _sequencer2.default, Channel: _channel2.default, Blip: _blip2.default, AudioService: _audioservice2.default };
-	exports.exports = _exports;
-	exports.default = _exports;
+	exports.Sequencer = _sequencer2.default;
+	exports.Channel = _channel2.default;
+	exports.Blip = _blip2.default;
+	exports.AudioService = _audioservice2.default;
+	exports.default = { Sequencer: _sequencer2.default, Channel: _channel2.default, Blip: _blip2.default, AudioService: _audioservice2.default };
 
 /***/ },
 /* 1 */
