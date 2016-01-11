@@ -6,7 +6,9 @@ describe('Stateful mixin', function() {
   let foo;
 
   beforeEach(() => {
-    Foo = function(){};
+    Foo = function(){
+      this.state = {};
+    };
     Object.assign(Foo.prototype, stateful.mixin);
     foo = new Foo();
   });
