@@ -1,14 +1,12 @@
 import stateful from 'lib/stateful';
 
-describe('Stateful mixin', function() {
+describe('Stateful mixin', () => {
 
   let Foo;
   let foo;
 
   beforeEach(() => {
-    Foo = function(){
-      this.state = {};
-    };
+    Foo = function(){};
     Object.assign(Foo.prototype, stateful.mixin);
     foo = new Foo();
   });
@@ -17,6 +15,11 @@ describe('Stateful mixin', function() {
     foo.setState({a:1, b:2});
     foo.state.a.should.eql(1);
     foo.state.b.should.eql(2);
+  });
+
+  it("throw an error on attempting to reassign @state", () => {
+    foo.setState({});
+    (() => {foo.state = {}}).should.throw();
   });
 
   it("performs an overwrite with setState()", () => {
@@ -37,7 +40,7 @@ describe('Stateful mixin', function() {
     i.should.eql(2);
   });
 
-  it("does not trigger a callback on calling setState() with the same state.", function() {
+  it("aovid triggering handlers on repeating the same state.", () => {
     let i = 0;
     foo.onStateChange((newState) => {
       i++;
