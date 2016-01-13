@@ -48,21 +48,20 @@ describe('Blip', () => {
     blip.state.gain.should.eql(-2);
   });
 
-  it("gainScale returns 1 on setting gain to max.", () => {
-    blip.setState({gain: blip.state.maxGain});
-    blip.state.gainScale.should.eql(1);
-  });
+  // it("gainScale returns 1 on setting gain to max.", () => {
+  //   blip.setState({gain: blip.state.maxGain});
+  //   blip.state.gainScale.should.eql(1);
+  // });
 
-  it("gainScale returns 0 on setting gain to min.", () => {
-    blip.setState({gain: blip.state.minGain});
-    blip.state.gainScale.should.eql(0);
-  });
+  // it("gainScale returns 0 on setting gain to min.", () => {
+  //   blip.setState({gain: blip.state.minGain});
+  //   blip.state.gainScale.should.eql(0);
+  // });
 
-  it("gainScale returns 0.5 on setting gain to its middle.", () => {
-    let middle = (blip.state.maxGain + blip.state.minGain) / 2;
-    blip.setState({gain: middle});
-    blip.state.gainScale.should.eql(0.5);
-  });
-
+  // it("gainScale returns 0.5 on setting gain to its middle.", () => {
+  //   let middle = (blip.state.maxGain + blip.state.minGain) / 2;
+  //   blip.setState({gain: middle});
+  //   blip.state.gainScale.should.eql(0.5);
+  // });
 
 });
