@@ -40,7 +40,7 @@ describe('Stateful mixin', () => {
     i.should.eql(2);
   });
 
-  it("aovid triggering handlers on repeating the same state.", () => {
+  it("avoids triggering handlers on repeating the same state.", () => {
     let i = 0;
     foo.onStateChange((newState) => {
       i++;
