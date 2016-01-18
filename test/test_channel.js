@@ -21,4 +21,17 @@ describe('Channel', () => {
     });
   });
 
+  it("does not play a beat if it's mute.", () => {
+    let i = 0;
+    channel.state.blips[0].play = () => i++;
+    channel.playBeat(0);
+    i.should.eql(1);
+    channel.setState({mute: true});
+    channel.playBeat(0);
+    i.should.eql(1);
+    channel.setState({mute: false});
+    channel.playBeat(0);
+    i.should.eql(2);
+  });
+
 });
