@@ -17,6 +17,11 @@ describe('Stateful mixin', () => {
     foo.state.b.should.eql(2);
   });
 
+  it("calls setState with an empty object.", () => {
+    foo.setState({});
+    Object.keys(foo.state).should.eql(['id']);
+  });
+
   it("throw an error on attempting to reassign @state", () => {
     foo.setState({});
     (() => {foo.state = {}}).should.throw();
@@ -66,6 +71,17 @@ describe('Stateful mixin', () => {
     i.should.eql(1);
     foo.setState({a: 1});
     i.should.eql(1);
+  });
+
+  it("sets a unique id on every mixed object.", () => {
+    let ids = [];
+    for (let i=0; i < 1000; i++) {
+      let foo = new Foo();
+      foo.setState({});
+      ids.push(foo.state.id);
+    }
+    let set = new Set(ids);
+    set.size.should.eql(1000);
   });
 
 });
