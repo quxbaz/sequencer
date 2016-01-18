@@ -40,6 +40,23 @@ describe('Stateful mixin', () => {
     i.should.eql(2);
   });
 
+  it("detaches a handler function.", () => {
+    let i = 0;
+    let handler = () => i++;
+    foo.onStateChange(handler);
+    foo.setState({a: 1});
+    foo.setState({a: 2});
+    i.should.eql(2);
+    foo.offStateChange(handler);
+    foo.setState({a: 3});
+    i.should.eql(2);
+  });
+
+  it("throws an error on attempting to detach a non-attached handler.", () => {
+    foo.onStateChange(() => null);
+    foo.offStateChange.bind(foo, () => 1).should.throw();
+  });
+
   it("avoids triggering handlers on repeating the same state.", () => {
     let i = 0;
     foo.onStateChange((newState) => {
