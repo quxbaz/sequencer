@@ -73,15 +73,4 @@ describe('Stateful mixin', () => {
     i.should.eql(1);
   });
 
-  it("sets a unique id on every mixed object.", () => {
-    let ids = [];
-    for (let i=0; i < 1000; i++) {
-      let foo = new Foo();
-      foo.setState({});
-      ids.push(foo.id);
-    }
-    let set = new Set(ids);
-    set.size.should.eql(1000);
-  });
-
 });

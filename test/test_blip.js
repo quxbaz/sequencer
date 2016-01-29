@@ -8,6 +8,13 @@ describe('Blip', () => {
     blip = new Blip();
   });
 
+  it("blips have unique ids.", () => {
+    let ids = new Set();
+    for (let i=0; i < 1000; i++)
+      ids.add(new Blip().id);
+    ids.size.should.eql(1000);
+  });
+
   it("sets gain.", () => {
     blip.setState({gain: 2});
     blip.state.gain.should.eql(2);
