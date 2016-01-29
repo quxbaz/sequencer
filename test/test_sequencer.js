@@ -49,8 +49,8 @@ describe("Sequencer", () => {
 
   it("publishes a play-blip message.", () => {
     let i = 1;
-    sequencer.subscribe('play-blip', (n) => i += n);
-    sequencer.publish('play-blip', 2);
+    sequencer.on('play-blip', (n) => i += n);
+    sequencer.trigger('play-blip', 2);
     i.should.eql(3);
   });
 
