@@ -47,10 +47,10 @@ describe("Sequencer", () => {
     sequencer.state.channels.length.should.eql(1);
   });
 
-  it("publishes a play-blip message.", () => {
+  it("publishes a 'playBlip' message.", () => {
     let i = 1;
-    sequencer.on('play-blip', (n) => i += n);
-    sequencer.trigger('play-blip', 2);
+    sequencer.on('playBlip', (n) => i += n);
+    sequencer.trigger('playBlip', 2);
     i.should.eql(3);
   });
 
