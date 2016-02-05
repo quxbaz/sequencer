@@ -34,4 +34,9 @@ describe('Channel', () => {
     i.should.eql(2);
   });
 
+  it("creates blips with the correct beat property.", () => {
+    for (let i=0; i < 32; i++)
+      channel.state.blips[i].state.beat.should.eql(i);
+  });
+
 });
