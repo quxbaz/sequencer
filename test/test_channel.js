@@ -39,4 +39,9 @@ describe('Channel', () => {
       channel.state.blips[i].state.beat.should.eql(i);
   });
 
+  it("Sets a blip with new properties.", () => {
+    channel.setBlip(1, {gain: 4});
+    channel.state.blips[1].state.gain.should.eql(4);
+  });
+
 });
