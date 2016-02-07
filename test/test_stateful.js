@@ -1,14 +1,11 @@
-import stateful from 'lib/stateful';
+import {Stateful} from 'lib/stateful';
 
 describe('Stateful mixin', () => {
 
-  let Foo;
   let foo;
 
   beforeEach(() => {
-    Foo = function(){};
-    Object.assign(Foo.prototype, stateful.mixin);
-    foo = new Foo();
+    foo = new Stateful();
   });
 
   it("calls setState()", () => {
@@ -36,7 +33,7 @@ describe('Stateful mixin', () => {
 
   it("triggers a callback on change state.", () => {
     let i = 0;
-    foo.onStateChange((newState) => {
+    foo.on('change', (newState) => {
       i++;
     });
     foo.setState({a: 1});
@@ -48,18 +45,13 @@ describe('Stateful mixin', () => {
   it("detaches a handler function.", () => {
     let i = 0;
     let handler = () => i++;
-    foo.onStateChange(handler);
+    foo.on('change', handler);
     foo.setState({a: 1});
     foo.setState({a: 2});
     i.should.eql(2);
-    foo.offStateChange(handler);
+    foo.off('change', handler);
     foo.setState({a: 3});
     i.should.eql(2);
-  });
-
-  it("throws an error on attempting to detach a non-attached handler.", () => {
-    foo.onStateChange(() => null);
-    foo.offStateChange.bind(foo, () => 1).should.throw();
   });
 
   it.skip("avoids triggering handlers on repeating the same state.", () => {
