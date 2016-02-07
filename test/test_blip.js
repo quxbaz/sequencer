@@ -56,7 +56,7 @@ describe('Blip', () => {
   });
 
   it("sets custom defaults.", () => {
-    let defaults = require('lib/blip').defaults;
+    let defaults = require('lib/defaults').blipDefaults;
     defaults.offset = 60;
     new Blip().state.offset.should.eql(60);
   });
