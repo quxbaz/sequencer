@@ -54,4 +54,13 @@ describe("Sequencer", () => {
     i.should.eql(3);
   });
 
+  it("expects a blipState and channel on a playBlip event.", (done) => {
+    let channel = sequencer.addChannel();
+    sequencer.on('playBlip', (blipState, ch) => {
+      ch.should.eql(channel);
+      done();
+    });
+    channel.state.blips[0].play();
+  });
+
 });
