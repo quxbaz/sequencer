@@ -14,10 +14,10 @@ describe('Channel', () => {
     });
   });
 
-  it("creates default Blip objects with the same @sampleName state as its own.", () => {
-    let channel = new Channel({sampleName: 'kick'});
+  it("creates default Blip objects with the same @sample state as its own.", () => {
+    let channel = new Channel({sample: 'kick'});
     channel.state.blips.forEach((blip) => {
-      blip.state.sampleName.should.eql('kick');
+      blip.state.sample.should.eql('kick');
     });
   });
 
