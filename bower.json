@@ -18,7 +18,5 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "timer.js": "https://github.com/quxbaz/timer.js.git"
-  }
+  "dependencies": {}
 }

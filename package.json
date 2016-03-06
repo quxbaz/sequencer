@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "sentry": "git+https://github.com/quxbaz/sentry.git",
-    "stateful": "git+https://github.com/quxbaz/stateful.git"
+    "stateful": "git+https://github.com/quxbaz/stateful.git",
+    "timer.js": "git+https://github.com/quxbaz/timer.js.git"
   }
 }
