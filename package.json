@@ -16,6 +16,11 @@
     "url": "https://github.com/quxbaz/sequencer/issues"
   },
   "homepage": "https://github.com/quxbaz/sequencer#readme",
+  "dependencies": {
+    "sentry": "git+https://github.com/quxbaz/sentry.git",
+    "stateful": "git+https://github.com/quxbaz/stateful.git",
+    "timer.js": "git+https://github.com/quxbaz/timer.js.git"
+  },
   "devDependencies": {
     "babel-core": "^6.4.0",
     "babel-loader": "^6.2.1",
@@ -24,10 +29,5 @@
     "es6-promise": "^3.0.2",
     "mocha": "^2.3.4",
     "webpack": "^1.12.10"
-  },
-  "dependencies": {
-    "sentry": "git+https://github.com/quxbaz/sentry.git",
-    "stateful": "git+https://github.com/quxbaz/stateful.git",
-    "timer.js": "git+https://github.com/quxbaz/timer.js.git"
   }
 }
